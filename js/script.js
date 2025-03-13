@@ -158,3 +158,55 @@
                 hamburger.classList.toggle('active');
             });
         });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const button = document.querySelector(".cta-button");
+            let isDragging = false;
+            let startX = 0;
+            let currentX = 0;
+        
+            // Functie om te starten met slepen
+            function startDrag(e) {
+                isDragging = true;
+                startX = e.touches ? e.touches[0].clientX : e.clientX;
+                button.style.transition = "none";
+            }
+        
+            // Functie om te bewegen
+            function onDrag(e) {
+                if (!isDragging) return;
+                currentX = e.touches ? e.touches[0].clientX : e.clientX;
+                let moveX = currentX - startX;
+        
+                if (moveX > 0) { // Alleen naar rechts laten slepen
+                    button.style.transform = `translateX(${moveX}px)`;
+                }
+            }
+        
+            // Functie om het slepen te stoppen
+            function stopDrag() {
+                if (!isDragging) return;
+                isDragging = false;
+                button.style.transition = "transform 0.4s ease-in-out";
+        
+                // Check of de knop ver genoeg is gesleept
+                if (currentX - startX > 150) {
+                    window.location.href = "mailto:yentesparla@hotmail.com";
+                    setTimeout(() => {
+                        button.style.transform = "translateX(0)";
+                    }, 500);
+                } else {
+                    button.style.transform = "translateX(0)";
+                }
+            }
+        
+            // Eventlisteners voor zowel muis als touch
+            button.addEventListener("mousedown", startDrag);
+            button.addEventListener("mousemove", onDrag);
+            button.addEventListener("mouseup", stopDrag);
+            button.addEventListener("mouseleave", stopDrag);
+        
+            button.addEventListener("touchstart", startDrag);
+            button.addEventListener("touchmove", onDrag);
+            button.addEventListener("touchend", stopDrag);
+        });
