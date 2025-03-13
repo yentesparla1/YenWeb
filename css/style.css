@@ -12,7 +12,8 @@ header {
     background-color: #F9F7F2;
     color: #0F4C75;
     height: 80vh;
-    position: relative; /* Zorg ervoor dat de header de referentie is voor absolute positionering */
+    position: relative;
+    /* Zorg ervoor dat de header de referentie is voor absolute positionering */
 
 }
 
@@ -139,7 +140,8 @@ nav a:hover {
     position: absolute;
     bottom: 0;
     left: 75%;
-    transform: translateX(-50%); /* Centreer de afbeelding horizontaal */
+    transform: translateX(-50%);
+    /* Centreer de afbeelding horizontaal */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -754,21 +756,24 @@ main {
     margin: 0 auto;
     padding: 20px;
 }
+
 .image-container {
     margin-top: -200px;
     margin-left: -20px;
     width: 100vw;
-    padding: 0; 
-    box-sizing: border-box; 
-    text-align: center; 
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
     position: relative;
     display: inline-block;
 }
+
 .image-container img {
     display: block;
     max-width: 100%;
     height: auto;
-    transition: filter 0.3s ease; /* Voeg een overgang toe voor de blur */
+    transition: filter 0.3s ease;
+    /* Voeg een overgang toe voor de blur */
 }
 
 .image-container {
@@ -780,7 +785,8 @@ main {
     display: block;
     max-width: 100%;
     height: auto;
-    transition: filter 0.3s ease; /* Voeg een overgang toe voor de blur */
+    transition: filter 0.3s ease;
+    /* Voeg een overgang toe voor de blur */
 }
 
 .overlay-image {
@@ -788,30 +794,44 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px; /* Pas de grootte van de overlay-afbeelding aan naar wens */
+    width: 250px;
+    /* Pas de grootte van de overlay-afbeelding aan naar wens */
     height: auto;
-    pointer-events: auto; /* Maak de overlay-afbeelding klikbaar */
+    pointer-events: auto;
+    /* Maak de overlay-afbeelding klikbaar */
     border-radius: 180px;
-    animation: pulse 2s infinite; /* Voeg een pulse animatie toe */
-    cursor: pointer; /* Verander de cursor naar een pointer */
+    animation: pulse 2s infinite;
+    /* Voeg een pulse animatie toe */
+    cursor: pointer;
+    /* Verander de cursor naar een pointer */
+}
+
+.img {
+    width: 100%;
+    height: 100%;
 }
 
 @keyframes pulse {
     0% {
         transform: translate(-50%, -50%) scale(1);
     }
+
     50% {
         transform: translate(-50%, -50%) scale(1.1);
     }
+
     100% {
         transform: translate(-50%, -50%) scale(1);
     }
 }
 
 .overlay-image:hover {
-    animation: none; /* Stop de pulse animatie bij hover */
-    transform: translate(-50%, -50%) scale(1.2); /* Vergroot de afbeelding bij hover */
-    transition: transform 0.3s ease; /* Voeg een overgang toe voor de vergroting */
+    animation: none;
+    /* Stop de pulse animatie bij hover */
+    transform: translate(-50%, -50%) scale(1.2);
+    /* Vergroot de afbeelding bij hover */
+    transition: transform 0.3s ease;
+    /* Voeg een overgang toe voor de vergroting */
 }
 
 /* The Modal */
@@ -833,17 +853,20 @@ main {
     text-align: center;
 }
 
-.banner{
+.banner {
     width: 100%;
 }
-.padding{
+
+.padding {
     padding: 50px;
 }
-.lijn{
+
+.lijn {
     border-bottom: 2px solid #D5D3CF;
     margin: 40px auto;
     width: 90%;
 }
+
 .modal-content {
     margin: 0 auto;
     display: block;
@@ -852,14 +875,20 @@ main {
 }
 
 /* Add Animation */
-.modal-content, #caption { 
+.modal-content,
+#caption {
     animation-name: zoom;
     animation-duration: 0.6s;
 }
 
 @keyframes zoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
 }
 
 
@@ -882,6 +911,7 @@ main {
     color: #ff7f50;
     font-weight: bold;
 }
+
 .InfoSchoolproject {
     display: flex;
     justify-content: space-between;
@@ -891,7 +921,8 @@ main {
     font-weight: bold;
     color: #2c3e50;
 }
-.InfoSchoolprojectTekst{
+
+.InfoSchoolprojectTekst {
     font-size: 30px;
     color: #0F4C75;
 }
@@ -901,16 +932,20 @@ main {
     gap: 10px;
     justify-content: center;
     margin-top: 20px;
-    margin-left: auto; /* Voeg deze regel toe om de container te centreren */
-    margin-right: auto; /* Voeg deze regel toe om de container te centreren */
-    max-width: 100%; /* Zorg ervoor dat de container niet breder is dan de viewport */
+    margin-left: auto;
+    /* Voeg deze regel toe om de container te centreren */
+    margin-right: auto;
+    /* Voeg deze regel toe om de container te centreren */
+    max-width: 100%;
+    /* Zorg ervoor dat de container niet breder is dan de viewport */
 }
 
 .Mockups img {
     width: 45%;
     border-radius: 10px;
 }
-.TitelModal{
+
+.TitelModal {
     font-family: "Recoleta-Bold", Helvetica;
     font-weight: 700;
     color: #124d76;
@@ -918,7 +953,8 @@ main {
     text-align: left;
     margin-bottom: 15px;
 }
-.tekstModal{
+
+.tekstModal {
     font-family: "Work Sans", Helvetica;
     font-weight: 350;
     color: #124D76;
@@ -926,36 +962,45 @@ main {
     text-align: left;
     line-height: normal;
 }
+
 .highlight {
     color: #ED6B3C;
     font-weight: bold;
     font-size: 18px;
 }
-.tekstModal2{
+
+.tekstModal2 {
     margin-top: 10px;
 }
+
 .link {
     color: #ED6B3C;
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease; /* Voeg een overgang toe voor de kleur en transformatie */
+    transition: color 0.3s ease, transform 0.3s ease;
+    /* Voeg een overgang toe voor de kleur en transformatie */
 }
 
 .link:hover {
-    color: #FF4500; /* Verander de kleur bij hover */
-    transform: scale(1.1); /* Vergroot de link iets bij hover */
+    color: #FF4500;
+    /* Verander de kleur bij hover */
+    transform: scale(1.1);
+    /* Vergroot de link iets bij hover */
 }
+
 .close {
     position: absolute;
     top: 35px;
     right: 35px;
     width: 40px;
     height: 40px;
-    background-image: url('assets/closeIcon.png'); /* Voeg de achtergrondafbeelding toe */
+    background-image: url('assets/closeIcon.png');
+    /* Voeg de achtergrondafbeelding toe */
     background-size: cover;
     background-position: center;
-    border-radius: 50%; /* Maak de sluitknop een cirkel */
+    border-radius: 50%;
+    /* Maak de sluitknop een cirkel */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -963,48 +1008,66 @@ main {
 }
 
 .close-icon {
-    width: 70px; /* Pas de grootte van het kruis aan naar wens */
+    width: 70px;
+    /* Pas de grootte van het kruis aan naar wens */
     height: 70px;
-    pointer-events: none; /* Zorg ervoor dat de klikbare acties niet worden geblokkeerd */
+    pointer-events: none;
+    /* Zorg ervoor dat de klikbare acties niet worden geblokkeerd */
 }
+
 .close:hover {
-    transform: scale(1.1); /* Vergroot de sluitknop bij hover */
+    transform: scale(1.1);
+    /* Vergroot de sluitknop bij hover */
 }
+
 .slider-container {
     width: 100%;
     overflow: hidden;
     position: relative;
-    max-width: 100%; /* Pas aan naar wens */
+    max-width: 100%;
+    /* Pas aan naar wens */
 }
 
 .slider-track {
     display: flex;
-    width: max-content; /* Aantal afbeeldingen */
+    width: max-content;
+    /* Aantal afbeeldingen */
     animation: slideAnimation 30s linear infinite;
     gap: 20px;
-    animation-play-state: running !important; /* Zorgt ervoor dat hij niet stopt */
+    animation-play-state: running !important;
+    /* Zorgt ervoor dat hij niet stopt */
 
 }
 
 .slideshow-image {
     width: 90%;
-    max-width: 800px; /* Pas aan naar wens */
+    max-width: 800px;
+    /* Pas aan naar wens */
     height: auto;
     flex-shrink: 0;
 }
+
 .slideshow-image1 {
     max-width: 350px;
-    height: 350px; 
+    height: 350px;
     flex-shrink: 0;
-    object-fit: cover; 
-}
-/* Animatie voor het automatisch schuiven */
-@keyframes slideAnimation {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Halve breedte verplaatsen, zodat er altijd content is */
+    object-fit: cover;
 }
 
-#gifCoodle{
+/* Animatie voor het automatisch schuiven */
+@keyframes slideAnimation {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+    /* Halve breedte verplaatsen, zodat er altijd content is */
+}
+
+#gifCoodle {
     width: 20%;
     height: 20%;
     margin-top: 150px;
@@ -1035,29 +1098,34 @@ main {
 }
 
 /* Fotografie */
-.tekstFotografie{
-font-family: "Work Sans";
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+.tekstFotografie {
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
-.headerFotografie{
+
+.headerFotografie {
     background-color: #F9F7F2;
     color: #0F4C75;
     height: 50vh;
 }
-.mainFotografie{
-width: 85%;
-margin: 0 auto;
+
+.mainFotografie {
+    width: 85%;
+    margin: 0 auto;
 }
-.tekstFotografie2{
+
+.tekstFotografie2 {
     margin-top: 10px;
 }
+
 .slider-container2 {
-  margin-top: 50px;
+    margin-top: 50px;
 }
-.footer2{
+
+.footer2 {
     background-color: #F9F7F2;
 }
 
@@ -1069,19 +1137,24 @@ body.modal-open::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Donkere overlay */
-    backdrop-filter: blur(10px); /* Voeg blur toe */
+    background: rgba(0, 0, 0, 0.3);
+    /* Donkere overlay */
+    backdrop-filter: blur(10px);
+    /* Voeg blur toe */
     z-index: 1;
-    
+
 }
 
 /* Zorg ervoor dat de modal voor de blur komt */
 .modal {
     position: fixed;
-    z-index: 2; /* Hoger dan de blur overlay */
+    z-index: 2;
+    /* Hoger dan de blur overlay */
 }
+
 body.modal-open {
-    overflow: hidden; /* Voorkomt scrollen op de achtergrond */
+    overflow: hidden;
+    /* Voorkomt scrollen op de achtergrond */
 }
 
 
@@ -1146,9 +1219,11 @@ footer {
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    bottom: 125%; /* Plaats de tooltip boven het element */
+    bottom: 125%;
+    /* Plaats de tooltip boven het element */
     left: 50%;
-    margin-left: -80px; /* Gebruik negatieve marge om de tooltip te centreren */
+    margin-left: -80px;
+    /* Gebruik negatieve marge om de tooltip te centreren */
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -1156,7 +1231,8 @@ footer {
 .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
-    top: 100%; /* Plaats de pijl onder de tooltip */
+    top: 100%;
+    /* Plaats de pijl onder de tooltip */
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
@@ -1168,6 +1244,200 @@ footer {
     visibility: visible;
     opacity: 1;
 }
-.color{
+
+.color {
     color: #124D76;
+}
+
+
+/* Responsive Home pagina */
+
+
+/* Stijl voor het hamburgermenu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 2;
+    /* Zorg ervoor dat het hamburgermenu boven de navigatie staat */
+
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: #0F4C75;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
+}
+
+/* Stijl voor het kruisje */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+@media (max-width: 900px) {
+    .about-text {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #titel-aboutme {
+        font-size: 28px;
+    }
+
+    .aboutme-style {
+        font-size: 16px;
+    }
+
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Responsive stijl voor mobiele apparaten */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        background: #F9F7F2;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-top: -40px;
+
+    }
+
+    .header-text h1 {
+        font-size: 44px;
+        margin-top: -30px;
+    }
+
+    .header-text .experience {
+        font-size: 20px;
+        /* Verklein de grootte van de tekst */
+    }
+
+    .header-text .number {
+        font-size: 50px;
+        /* Verklein de grootte van het nummer */
+    }
+
+    .header-text .text {
+        font-size: 20px;
+        /* Verklein de grootte van de tekst */
+    }
+
+    .profile-image .abstract-bg {
+        width: 230px;
+        height: 270px;
+    }
+
+    .header {
+        overflow: hidden;
+    }
+
+    .profile-image img {
+        width: 250px;
+    }
+
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #titel-aboutme {
+        font-size: 28px;
+    }
+
+    .aboutme-style {
+        font-size: 16px;
+    }
+
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 34px;
+    }
+
+    .skills {
+        display: none;
+    }
+/* Responsive stijl Graphic Design */
+.image-container {
+    width: 100%; /* Zorg ervoor dat de container de volledige breedte inneemt op kleinere schermen */
+    margin: -2px auto; /* Centreer de container */
+}
+.titelProjecten{
+    font-size: 34px;
+}
+.headerGraphicD{
+    height: 270px;
+}
+.overlay-image{
+    width: 150px;
+    height: 150px;
+}
+.close-icon{
+    width: 40px;
+    height: 40px;
+ 
+}
+.InfoSchoolprojectTekst{
+    font-size: 20px;
+}
+.headerFotografie{
+    height: 40vh;
+}
+.TitelModal{
+    font-size: 30px;
+}
 }
