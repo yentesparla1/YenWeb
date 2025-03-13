@@ -1343,12 +1343,12 @@ footer {
 
     .header-text .experience {
         font-size: 20px;
-        /* Verklein de grootte van de tekst */
+        margin-left: -10px;
     }
 
     .header-text .number {
         font-size: 50px;
-        /* Verklein de grootte van het nummer */
+        margin-left: -10px;
     }
 
     .header-text .text {
@@ -1411,33 +1411,43 @@ footer {
     .skills {
         display: none;
     }
-/* Responsive stijl Graphic Design */
-.image-container {
-    width: 100%; /* Zorg ervoor dat de container de volledige breedte inneemt op kleinere schermen */
-    margin: -2px auto; /* Centreer de container */
-}
-.titelProjecten{
-    font-size: 34px;
-}
-.headerGraphicD{
-    height: 270px;
-}
-.overlay-image{
-    width: 150px;
-    height: 150px;
-}
-.close-icon{
-    width: 40px;
-    height: 40px;
- 
-}
-.InfoSchoolprojectTekst{
-    font-size: 20px;
-}
-.headerFotografie{
-    height: 40vh;
-}
-.TitelModal{
-    font-size: 30px;
-}
+
+    /* Responsive stijl Graphic Design */
+    .image-container {
+        width: 100%;
+        /* Zorg ervoor dat de container de volledige breedte inneemt op kleinere schermen */
+        margin: -2px auto;
+        /* Centreer de container */
+    }
+
+    .titelProjecten {
+        font-size: 34px;
+    }
+
+    .headerGraphicD {
+        height: 270px;
+    }
+
+    .overlay-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .close-icon {
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .InfoSchoolprojectTekst {
+        font-size: 20px;
+    }
+
+    .headerFotografie {
+        height: 40vh;
+    }
+
+    .TitelModal {
+        font-size: 30px;
+    }
 }
