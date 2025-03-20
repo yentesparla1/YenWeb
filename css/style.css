@@ -973,21 +973,41 @@ main {
     margin-top: 10px;
 }
 
-.link {
-    color: #ED6B3C;
+.link1 {
+    color: white; /* Witte tekst voor contrast */
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    /* Voeg een overgang toe voor de kleur en transformatie */
+    cursor: pointer; /* Cursor altijd op pointer */
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ED6B3C, #FF4500);
+    box-shadow: 0 4px 10px rgba(237, 107, 60, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    animation: pulse 1.5s infinite alternate ease-in-out;
+    animation: none !important;
+
 }
 
-.link:hover {
-    color: #FF4500;
-    /* Verander de kleur bij hover */
-    transform: scale(1.1);
-    /* Vergroot de link iets bij hover */
+
+.link1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(237, 107, 60, 0.6);
 }
+.clickable-image {
+    box-shadow: none !important;
+}
+
+@keyframes linkGlowEffect {
+    0% {
+        box-shadow: 0 4px 10px rgba(237, 107, 60, 0.4);
+    }
+    100% {
+        box-shadow: 0 6px 20px rgba(237, 107, 60, 0.8);
+    }
+}
+
 
 .close {
     position: absolute;
@@ -1450,4 +1470,5 @@ footer {
     .TitelModal {
         font-size: 30px;
     }
+    
 }
