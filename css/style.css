@@ -106,6 +106,74 @@ nav a:hover {
     font-size: 66px;
     margin: 0;
 }
+/* Animatie voor het binnenvliegen van de tekst */
+@keyframes flyIn {
+    0% {
+        transform: translateY(-100%); /* Start boven beeld */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Komt naar zijn normale positie */
+        opacity: 1;
+    }
+}
+
+/* Animatie voor fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animatie voor de ervaring */
+.experience {
+    font-size: 24px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    animation: flyIn 1s ease-out forwards;
+    animation-delay: 1.5s; /* Start na 1,5 seconden */
+}
+
+.number {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.text {
+    font-size: 18px;
+}
+
+/* Specifieke animatie voor "Hi, ik ben Yente Sparla" (header) */
+h1 {
+    animation: flyInFromTop 1s ease-out forwards;
+    animation-delay: 0.5s; /* Start na 0.5 seconden */
+    opacity: 0; /* Begin onzichtbaar */
+}
+
+/* Specifieke animatie voor "2 jaar ervaring" */
+.experience {
+    animation: flyInFromTop 1s ease-out forwards;
+    animation-delay: 1.3s; /* Start na 1 seconde */
+}
+
+/* Animatie voor tekst die van boven naar beneden komt */
+@keyframes flyInFromTop {
+    0% {
+        transform: translateY(-100%); /* Start boven het scherm */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Komt naar zijn normale positie */
+        opacity: 1;
+    }
+}
+
 
 .experience {
     font-size: 24px;
@@ -758,14 +826,23 @@ main {
 }
 
 .image-container {
-    margin-top: -200px;
-    margin-left: -20px;
     width: 100vw;
     padding: 0;
     box-sizing: border-box;
     text-align: center;
     position: relative;
     display: inline-block;
+    position: relative;
+    display: inline-block;
+    position: relative;
+    width: 100%; /* Zorgt ervoor dat de container de volledige breedte in beslag neemt */
+    height: auto; /* Laat de hoogte automatisch aanpassen aan de inhoud */
+    margin: -2px;
+    overflow: hidden;
+    margin-left: -3px;
+}
+.image-container2{
+    margin-top: -200px;
 }
 
 .image-container img {
@@ -776,35 +853,15 @@ main {
     /* Voeg een overgang toe voor de blur */
 }
 
-.image-container {
-    position: relative;
-    display: inline-block;
-}
+
 
 .clickable-image {
     display: block;
     max-width: 100%;
     height: auto;
     transition: filter 0.3s ease;
-    /* Voeg een overgang toe voor de blur */
 }
 
-.overlay-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    /* Pas de grootte van de overlay-afbeelding aan naar wens */
-    height: auto;
-    pointer-events: auto;
-    /* Maak de overlay-afbeelding klikbaar */
-    border-radius: 180px;
-    animation: pulse 2s infinite;
-    /* Voeg een pulse animatie toe */
-    cursor: pointer;
-    /* Verander de cursor naar een pointer */
-}
 
 .img {
     width: 100%;
@@ -825,14 +882,7 @@ main {
     }
 }
 
-.overlay-image:hover {
-    animation: none;
-    /* Stop de pulse animatie bij hover */
-    transform: translate(-50%, -50%) scale(1.2);
-    /* Vergroot de afbeelding bij hover */
-    transition: transform 0.3s ease;
-    /* Voeg een overgang toe voor de vergroting */
-}
+
 
 /* The Modal */
 .modal {
@@ -893,13 +943,8 @@ main {
 
 
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
-}
+
+
 
 .mockup {
     width: 100%;
@@ -933,11 +978,8 @@ main {
     justify-content: center;
     margin-top: 20px;
     margin-left: auto;
-    /* Voeg deze regel toe om de container te centreren */
     margin-right: auto;
-    /* Voeg deze regel toe om de container te centreren */
     max-width: 100%;
-    /* Zorg ervoor dat de container niet breder is dan de viewport */
 }
 
 .Mockups img {
@@ -1009,36 +1051,29 @@ main {
 }
 
 
-.close {
-    position: absolute;
-    top: 35px;
-    right: 35px;
-    width: 40px;
-    height: 40px;
-    background-image: url('assets/closeIcon.png');
-    /* Voeg de achtergrondafbeelding toe */
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    /* Maak de sluitknop een cirkel */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
 
 .close-icon {
-    width: 70px;
-    /* Pas de grootte van het kruis aan naar wens */
-    height: 70px;
-    pointer-events: none;
-    /* Zorg ervoor dat de klikbare acties niet worden geblokkeerd */
+    position: absolute; /* Button blijft in de modal, maar is absoluut gepositioneerd ten opzichte van de modal */
+    top: 20px; /* Van bovenaf 20px */
+    right: 20px; /* Van rechts 20px */
+    width: 70px; 
+    height: 70px; 
+    background-image: url('assets/closeIcon.png');
+    background-size: cover; /* Zorg ervoor dat het plaatje goed schaling heeft */
+    background-position: center;
+    border-radius: 50%; /* Maak de button rond */
+    cursor: pointer;
+    z-index: 1001; /* Zorg ervoor dat de button altijd boven andere elementen komt */
+    transition: transform 0.2s ease; /* Vloeiende overgang voor hover */
 }
 
-.close:hover {
-    transform: scale(1.1);
-    /* Vergroot de sluitknop bij hover */
+.close-icon:hover {
+    transform: scale(1.1); /* Vergroot de knop iets bij hover */
 }
+
+
+
+
 
 .slider-container {
     width: 100%;
@@ -1157,19 +1192,9 @@ body.modal-open::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    /* Donkere overlay */
-    backdrop-filter: blur(10px);
-    /* Voeg blur toe */
-    z-index: 1;
-
-}
-
-/* Zorg ervoor dat de modal voor de blur komt */
-.modal {
-    position: fixed;
-    z-index: 2;
-    /* Hoger dan de blur overlay */
+    background: rgba(0, 0, 0, 0.3); /* Donkere overlay */
+    filter: blur(10px); /* Fallback voor browsers zonder backdrop-filter */
+    z-index: 999;
 }
 
 body.modal-open {
@@ -1240,7 +1265,6 @@ footer {
     position: absolute;
     z-index: 1;
     bottom: 125%;
-    /* Plaats de tooltip boven het element */
     left: 50%;
     margin-left: -80px;
     /* Gebruik negatieve marge om de tooltip te centreren */
@@ -1330,6 +1354,7 @@ footer {
         width: 100%;
         margin: 10px 0;
     }
+    
 }
 
 /* Responsive stijl voor mobiele apparaten */
@@ -1470,5 +1495,177 @@ footer {
     .TitelModal {
         font-size: 30px;
     }
-    
+    .project-overlay h3.titelProjectOverlay {
+        font-size: 18px;
+    }
+    .category-tags .category-tag {
+        font-size: 5px; /* Pas de gewenste grootte toe */
+    }
+   
+    .project-button {
+        padding: 5px 15px; /* Maak de knop kleiner */
+    }
+    .project-button span.bekijkProject {
+        font-size: 10px ;
+    }
+
+    .project-button .arrow-icon {
+        width: 16px; /* Maak de pijl nog kleiner */
+    }
+ 
+}
+
+
+.img {
+    display: block;
+    width: 100%; /* Zorg ervoor dat de afbeelding de container vult */
+    height: auto; /* Behoud de oorspronkelijke hoogte-breedteverhouding */
+    object-fit: cover; /* Zorg ervoor dat de afbeelding niet vervormt */
+}
+
+.overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    right: -50%;
+    width: 50%; 
+    height: 100%; 
+    background-color: #00000045;
+    backdrop-filter: blur(10px);    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: right 0.8s ease; 
+}
+
+.project-overlay h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.image-container:hover .project-overlay {
+    right: 0; /* Schuif naar binnen bij hover */
+}
+.category-tags {
+    display: flex;
+    flex-wrap: wrap; /* Zorg ervoor dat de tags naar een nieuwe regel gaan als er geen ruimte is */
+    gap: 10px; /* Ruimte tussen de tags */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    justify-content: center; /* Centreer de tags */
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid rgba(200, 200, 200, 0.5); /* Lichte, subtiele rand */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Voeg een zachte schaduw toe */
+    border-radius: 8px; /* Maak de hoeken afgerond voor een moderne uitstraling */    border-radius: 8px; /* Afgeronde hoeken */
+    text-align: center;
+    white-space: nowrap; /* Zorg ervoor dat de tekst niet afbreekt */
+}
+h3.titelProjectOverlay{
+    font-size: 65px; 
+    font-weight: 700;
+}
+
+.project-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ED6B3C;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 10px 35px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -1px;
+    width: 43px;
+    height: 43px;
+    background-color: white;
+    border-radius: 50%;
+    transition: width 0.3s ease-out, height 0.3s ease-out, right 0.3s ease-out;
+    transform: translateY(-50%);
+}
+
+.project-button:hover::before {
+    width: 120%;
+    height: 300%;
+    right: -10%;
+    border-radius: 50px;
+}
+
+.project-button span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s;
+}
+
+.arrow-icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    right: -25px; /* Plaats de pijl tegen de rechterkant */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrow-icon::after {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 20px;
+    color: black;
+    transition: color 0.3s;
+}
+
+.project-button span:hover {
+    color: black;
+}
+body.modal-open {
+    backdrop-filter: blur(5px); /* Voeg een blur toe */
+    filter: blur(5px); /* Voor browsers die geen backdrop-filter ondersteunen */
+}
+.overlay {
+    display: none; /* Verberg standaard */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Donkere overlay */
+    backdrop-filter: blur(10px); /* Voeg blur toe */
+}
+
+body.modal-open .overlay {
+    display: block; /* Toon de overlay wanneer de modal open is */
 }
